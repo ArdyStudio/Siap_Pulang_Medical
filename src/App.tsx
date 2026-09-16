@@ -685,6 +685,14 @@ function ChecklistPage({ d }: { d: Diagnosis }) {
 function QuizPage({ d }: { d: Diagnosis }) {
   const [answers, setAnswers] = useState<number[]>([]);
 
+  const handleSubmit = () => {
+    const score = d.quiz.reduce((s, q, i) => s + (answers[i] === q.answer ? 1 : 0), 0);
+    // Simpan skor ke localStorage agar aman di mode phone / Vercel
+    localStorage.setItem(`last_quiz_score_${d.id}`, score.toString());
+    localStorage.setItem('last_quiz_total', d.quiz.length.toString());
+    go(`/edukasi/${d.id}/hasil`);
+  };
+
   return (
     <section className="page">
       <Back />
@@ -714,10 +722,7 @@ function QuizPage({ d }: { d: Diagnosis }) {
       </div>
       <Button
         disabled={answers.length !== d.quiz.length}
-        onClick={() => {
-          const score = d.quiz.reduce((s, q, i) => s + (answers[i] === q.answer ? 1 : 0), 0);
-          go(`/edukasi/${d.id}/hasil?score=${score}`);
-        }}
+        onClick={handleSubmit}
       >
         Submit Jawaban <ArrowRight size={17} />
       </Button>
@@ -726,8 +731,14 @@ function QuizPage({ d }: { d: Diagnosis }) {
 }
 
 function ResultPage({ d }: { d: Diagnosis }) {
-  const score = Number(new URLSearchParams(window.location.search).get('score') || 0);
-  const percentage = Math.round((score / d.quiz.length) * 100);
+  // Ambil skor dari localStorage (fallback aman jika URL param kosong)
+  const savedScore = localStorage.getItem(`last_quiz_score_${d.id}`);
+  const savedTotal = localStorage.getItem('last_quiz_total');
+
+  const score = savedScore !== null ? Number(savedScore) : Number(new URLSearchParams(window.location.search).get('score') || 0);
+  const total = savedTotal !== null ? Number(savedTotal) : d.quiz.length;
+  const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+
   const [showRating, setShowRating] = useState(false);
 
   useEffect(() => {
@@ -745,7 +756,7 @@ function ResultPage({ d }: { d: Diagnosis }) {
       <p>Anda telah menyelesaikan edukasi discharge planning untuk <strong>{d.name}</strong>.</p>
 
       <div className="score-card">
-        <div><span>Jawaban benar</span><strong>{score} / {d.quiz.length}</strong></div>
+        <div><span>Jawaban benar</span><strong>{score} / {total}</strong></div>
         <div><span>Nilai Pemahaman</span><strong>{percentage}%</strong></div>
       </div>
 
@@ -1095,6 +1106,7 @@ function App() {
   else if (path === '/siap-pulang') page = <ReadyPage />;
   else if (parts[0] === 'edukasi' && parts[2] === 'checklist') page = <ChecklistPage d={d} />;
   else if (parts[0] === 'edukasi' && parts[2] === 'evaluasi') page = <QuizPage d={d} />;
+  else if (parts[0] === 'edukasi' && parts[2] === 'hasil') page = <ResultPage d={d} />;
   else if (parts[0] === 'edukasi' && parts[1]) page = <DetailPage d={d} />;
 
   return <Shell>{page}</Shell>;
