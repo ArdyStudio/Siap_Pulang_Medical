@@ -899,7 +899,7 @@ function ContactPage() {
       </div>
       <div className="contact-list">
         {([
-          ['Ruangan', 'Ruang Rawat Inap Melati', '085111308183', Home],
+          ['Ruangan', 'Ruang Rawat Inap albasiah', '085111308183', Home],
           ['Poliklinik', 'Poliklinik Penyakit Dalam', '085111308183', Stethoscope],
           ['Jam Pelayanan', 'Senin–Jumat · 07.00–15.00 WIB', 'Sabtu · 07.00–12.00 WIB', Clock3]
         ] as [string, string, string, typeof Home][]).map(([title, one, two, Icon]) => (
