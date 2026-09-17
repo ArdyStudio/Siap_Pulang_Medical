@@ -897,7 +897,7 @@ function SchedulePage() {
 
 function ContactPage() {
   const handleWhatsApp = () => {
-    const phoneNumber = '6285111308183';
+    const phoneNumber = '6281110256789';
     const message = encodeURIComponent('Halo, saya ingin bertanya mengenai pelayanan SIAP PULANG.');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
@@ -912,8 +912,8 @@ function ContactPage() {
       </div>
       <div className="contact-list">
         {([
-          ['Ruangan', 'Ruang Rawat Inap albasiah', '085111308183', Home],
-          ['Poliklinik', 'Poliklinik Penyakit Dalam', '085111308183', Stethoscope],
+          ['Ruangan', 'Ruang Rawat Inap albasiah', '081110256789', Home],
+          ['Poliklinik', 'Poliklinik Penyakit Dalam', '081110256789', Stethoscope],
           ['Jam Pelayanan', 'Senin–Jumat · 07.00–15.00 WIB', 'Sabtu · 07.00–12.00 WIB', Clock3]
         ] as [string, string, string, typeof Home][]).map(([title, one, two, Icon]) => (
           <div className="contact-card" key={String(title)}>
