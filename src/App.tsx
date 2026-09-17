@@ -68,22 +68,20 @@ const diagnoses: Diagnosis[] = [
     color: 'cyan',
     definition: 'CKD adalah penurunan fungsi ginjal secara bertahap dalam jangka waktu lama, sehingga ginjal tidak mampu menyaring limbah dan cairan berlebih dari darah secara optimal.',
     symptoms: [
-      'Kaki/wajah bengkak, sesak napas, mual/muntah',
-      'Nafsu makan turun, kulit gatal',
-      'Jumlah urine berkurang'
+      'Kaki/wajah bengkak, sesak napas, mual/muntah, nafsu makan turun, kulit gatal, dan jumlah urine berkurang.'
     ],
     warning: [
-      'Sesak napas berat',
-      'Bengkak semakin memburuk di seluruh tubuh',
-      'Penurunan kesadaran / kesadaran menurun',
-      'Tidak bisa buang air kecil sama sekali'
+      'Sesak napas berat.',
+      'Bengkak semakin memburuk di seluruh tubuh.',
+      'Penurunan kesadaran / kesadaran menurun.',
+      'Tidak bisa buang air kecil sama sekali.'
     ],
     medication: [
       'Konsumsi obat sesuai resep (seperti obat tekanan darah, pengikat fosfat, penambah darah/eritropoietin).',
       'PERINGATAN: Hindari obat anti-nyeri golongan NSAID (seperti Asam Mefenamat, Ibuprofen) dan jamu/herbal tanpa persetujuan dokter karena dapat merusak ginjal lebih lanjut.'
     ],
     diet: [
-      'Pembatasan Cairan: Minum air sesuai dengan instruksi dokter/perawat (biasanya jumlah urine 24 jam + 500 mL).',
+      'Pembatasan Cairan: Minum air sesuai dengan instruksi dokter/perawat (jumlah urine 24 jam + 500 mL).',
       'Rendah Protein & Natrium: Batasi asupan garam dan makanan berprotein tinggi (disesuaikan apakah pasien sudah hemodialisis/cuci darah atau belum).',
       'Batasi Makanan Tinggi Kalium & Fosfat: Batasi pisang, alpukat, kurma, air kelapa, serta jeroan dan produk susu berlebih.'
     ],
@@ -102,17 +100,32 @@ const diagnoses: Diagnosis[] = [
     quiz: [
       {
         q: 'Mengapa penderita CKD perlu membatasi asupan cairan minum harian?',
-        options: ['Agar tidak cepat merasa lapar', 'Karena ginjal tidak mampu mengeluarkan kelebihan cairan sehingga berisiko bengkak dan sesak napas', 'Supaya obat bekerja lebih cepat', 'Tidak ada alasan khusus'],
+        options: [
+          'Agar tidak cepat merasa lapar',
+          'Karena ginjal tidak mampu mengeluarkan kelebihan cairan sehingga berisiko bengkak dan sesak napas',
+          'Supaya obat bekerja lebih cepat',
+          'Tidak ada alasan khusus'
+        ],
         answer: 1
       },
       {
         q: 'Golongan obat/bahan apa yang HARUS DIHINDARI oleh penderita CKD tanpa resep dokter?',
-        options: ['Obat peningkat sel darah merah', 'Obat darah tinggi dari dokter', 'Obat anti-nyeri sembarangan dan jamu herbal', 'Vitamin sesuai anjuran dokter'],
+        options: [
+          'Obat peningkat sel darah merah',
+          'Obat darah tinggi dari dokter',
+          'Obat anti-nyeri sembarangan dan jamu herbal',
+          'Vitamin sesuai anjuran dokter'
+        ],
         answer: 2
       },
       {
         q: 'Manakah dari tanda berikut yang merupakan Tanda Bahaya pada pasien CKD dan harus segera ke RS?',
-        options: ['Merasa sedikit mengantuk di malam hari', 'Sesak napas berat dan pembengkakan tubuh meluas', 'Berat badan stabil', 'Nafsu makan membaik'],
+        options: [
+          'Merasa sedikit mengantuk di malam hari',
+          'Sesak napas berat dan pembengkakan tubuh meluas',
+          'Berat badan stabil',
+          'Nafsu makan membaik'
+        ],
         answer: 1
       }
     ]
@@ -140,7 +153,7 @@ const diagnoses: Diagnosis[] = [
     ],
     diet: [
       'Diet Rendah Garam (Rendah Natrium): Maksimal 1 sendok teh garam per hari (termasuk garam dalam masakan/makanan kemasan).',
-      'Pembatasan Cairan: Batasi asupan cairan total (minum, kuah sup, es) sesuai instruksi dokter (biasanya 1,5–2 liter per hari).',
+      'Pembatasan Cairan: Batasi asupan cairan total (minum, kuah sup, es) sesuai instruksi dokter (1,5 – 2 liter per hari).',
       'Hindari makanan olahan, kalengan, dan makanan cepat saji yang tinggi natrium.'
     ],
     activity: [
