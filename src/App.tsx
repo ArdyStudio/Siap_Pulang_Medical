@@ -350,7 +350,7 @@ function Footer() {
         <img src="/LogoRSUD.png" alt="RSUD Kota Tangerang" style={{ height: '42px', width: 'auto' }} />
         <img src="/LogoEsaUnggul.png" alt="Universitas Esa Unggul" style={{ height: '42px', width: 'auto' }} />
       </div>
-      <p style={{ fontSize: '12px', color: '#94a3b8', margin: 0 }}>© {new Date().getFullYear()} SIAP PULANG — Profesi Ners 2025 Septi, Aulia, Annisa, Wina, sajida</p>
+      <p style={{ fontSize: '12px', color: '#94a3b8', margin: 0 }}>© {new Date().getFullYear()} SIAP PULANG — Profesi Ners 2025 Septi, Aulia, Annisa, Wina, Sajida</p>
     </footer>
   );
 }
